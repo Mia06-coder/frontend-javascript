@@ -6,17 +6,25 @@ This project introduces the basics of TypeScript by using interfaces, classes, f
 
 ## 📁 Project Structure
 
+```
 0x04-TypeScript/
 ├── task_0/
-│ ├── js/
-│ │ └── main.ts # TypeScript source file
-│ ├── dist/
-│ │ └── bundle.js # Webpack output (after build)
-│ │ └── index.html # Main HTML file to view output
-│ ├── package.json # Project metadata and dependencies
-│ ├── tsconfig.json # TypeScript compiler config
-│ ├── .eslintrc.js # Linting configuration
-│ └── webpack.config.js # Webpack bundler configuration
+│   ├── js/
+│   │   └── main.ts # TypeScript source file
+│   ├── dist/
+│   │   └── bundle.js # Webpack output (after build)
+│   │   └── index.html # Main HTML file to view output
+│   ├── package.json # Project metadata and dependencies
+│   ├── tsconfig.json # TypeScript compiler config
+│   ├── .eslintrc.js # Linting configuration
+│   └── webpack.config.js # Webpack bundler configuration
+├── task_1/
+│   ├── js/
+│   │   └── main.ts
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── webpack.config.js
+```
 
 ---
 
@@ -44,23 +52,54 @@ This project introduces the basics of TypeScript by using interfaces, classes, f
 
 ---
 
-### 🛠️ Usage
+## ✅ Task 1 - Teacher Interface
 
-#### Install dependencies:
+This task focuses on defining a TypeScript `Teacher` interface with required, optional, and read-only properties. It also supports dynamic attributes using an index signature.
+
+---
+
+### Features
+
+- `firstName` and `lastName` as `readonly`
+- Required: `fullTimeEmployee`, `location`
+- Optional: `yearsOfExperience`
+- Index signature to allow extra properties like `contract`
+
+---
+
+### Example Output
+
+```js
+{
+  firstName: "John",
+  fullTimeEmployee: false,
+  lastName: "Doe",
+  location: "London",
+  contract: false
+}
+```
+
+---
+
+## 🛠️ Usage
+
+### Install dependencies:
 
 ```bash
 npm install
 ```
 
-#### Build project
+### Build project
 
 ```bash
 npx webpack
 ```
 
-#### Run locally:
+### Run locally:
 
 Open `dist/index.html` in your browser after building.
+
+---
 
 ## 📦 Requirements
 
