@@ -156,6 +156,23 @@ console.log(createEmployee("$500")); // Director
 
 ---
 
+## Task 6 - Creating functions specific to employees
+
+- Implemented a type predicate function `isDirector` to determine if an employee is of type `Director`.
+- Created `executeWork`, which uses the type predicate to call the appropriate method (`workDirectorTasks` or `workTeacherTasks`).
+- Demonstrated polymorphic behavior using both class instances from `createEmployee`.
+
+---
+
+### Example Output
+
+```ts
+console.log(executeWork(createEmployee(200))); // Getting to work
+console.log(executeWork(createEmployee(1000))); // Getting to director tasks
+```
+
+---
+
 ## 🛠️ Usage
 
 ### Install dependencies:

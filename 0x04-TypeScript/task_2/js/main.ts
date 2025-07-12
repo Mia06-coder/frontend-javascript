@@ -37,7 +37,26 @@ const createEmployee = (salary: number | string): Director | Teacher => {
   }
 };
 
+// Type predicate to check if the employee is a Director
+export const isDirector = (
+  employee: Director | Teacher
+): employee is Director => {
+  return (employee as Director).workDirectorTasks !== undefined;
+};
+
+// Excecute work based on employee type
+export const executeWork = (employee: Director | Teacher): string => {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks;
+  } else {
+    return employee.workTeacherTasks;
+  }
+};
+
 // Example usage
 console.log(createEmployee(200)); // Teacher
 console.log(createEmployee(1000)); // Director
 console.log(createEmployee("$500")); // Director
+
+console.log(executeWork(createEmployee(200))); // Getting to work
+console.log(executeWork(createEmployee(1000))); // Getting to director tasks
