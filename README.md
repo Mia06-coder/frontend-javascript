@@ -8,7 +8,7 @@ This project introduces the basics of TypeScript by using interfaces, classes, f
 
 ```
 0x04-TypeScript/
-├── task_0/
+├── task_0/ (Task 0 below)
 │   ├── js/
 │   │   └── main.ts # TypeScript source file
 │   ├── dist/
@@ -19,7 +19,9 @@ This project introduces the basics of TypeScript by using interfaces, classes, f
 │   ├── tsconfig.json # TypeScript compiler config
 │   ├── .eslintrc.js # Linting configuration
 │   └── webpack.config.js # Webpack bundler configuration
-├── task_1/
+├── task_1/ (Task 1-4 below)
+│   ├── ...
+├── task_2/ (Task 5-7 below)
 │   ├── ...
 ```
 
@@ -78,7 +80,7 @@ This task focuses on defining a TypeScript `Teacher` interface with required, op
 
 ---
 
-## Task 2 - Extending the Teacher Interface
+## ✅ Task 2 - Extending the Teacher Interface
 
 Extended the Teacher interface by creating a new interface named Directors. The Directors interface inherits all properties from Teacher and includes an additional required property:
 
@@ -100,7 +102,7 @@ Extended the Teacher interface by creating a new interface named Directors. The 
 
 ---
 
-## Task 3 - Printing Teachers
+## ✅ Task 3 - Printing Teachers
 
 This task required creating a function `printTeacher` that formats a teacher's name by returning:
 
@@ -120,7 +122,7 @@ printTeacher("John", "Doe"); // Output: J. Doe
 
 ---
 
-## Task 4 - Writing a Class
+## ✅ Task 4 - Writing a Class
 
 - Created a `StudentClass` class that implements `StudentClassInterface`.
 - Constructor and methods were strictly typed.
@@ -138,7 +140,7 @@ console.log(student.workOnHomework()); // "Currently working"
 
 ---
 
-## Task 5 - Advanced Types Part 1
+## ✅ Task 5 - Advanced Types Part 1
 
 - Defined two interfaces: `DirectorInterface` and `TeacherInterface`, each with specific task-related methods.
 - Created classes `Director` and `Teacher` that implement their respective interfaces.
@@ -156,7 +158,7 @@ console.log(createEmployee("$500")); // Director
 
 ---
 
-## Task 6 - Creating functions specific to employees
+## ✅ Task 6 - Creating functions specific to employees
 
 - Implemented a type predicate function `isDirector` to determine if an employee is of type `Director`.
 - Created `executeWork`, which uses the type predicate to call the appropriate method (`workDirectorTasks` or `workTeacherTasks`).
@@ -169,6 +171,23 @@ console.log(createEmployee("$500")); // Director
 ```ts
 console.log(executeWork(createEmployee(200))); // Getting to work
 console.log(executeWork(createEmployee(1000))); // Getting to director tasks
+```
+
+---
+
+## ✅ 7 - String Literal Types
+
+- Created a custom string literal type `Subjects` that restricts values to 'Math' or 'History'.
+- Implemented the `teachClass` function which returns the appropriate teaching message based on the subject.
+- Demonstrated usage with both 'Math' and 'History'.
+
+---
+
+### Example Output
+
+```ts
+console.log(teachClass("Math")); // Teaching Math
+console.log(teachClass("History")); // Teaching History
 ```
 
 ---
