@@ -14,16 +14,13 @@ This project introduces the basics of TypeScript by using interfaces, classes, f
 │   ├── dist/
 │   │   └── bundle.js # Webpack output (after build)
 │   │   └── index.html # Main HTML file to view output
+│   ├── package-lock.json
 │   ├── package.json # Project metadata and dependencies
 │   ├── tsconfig.json # TypeScript compiler config
 │   ├── .eslintrc.js # Linting configuration
 │   └── webpack.config.js # Webpack bundler configuration
 ├── task_1/
-│   ├── js/
-│   │   └── main.ts
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── webpack.config.js
+│   ├── ...
 ```
 
 ---
@@ -69,7 +66,7 @@ This task focuses on defining a TypeScript `Teacher` interface with required, op
 
 ### Example Output
 
-```js
+```ts
 {
   firstName: "John",
   fullTimeEmployee: false,
@@ -77,6 +74,48 @@ This task focuses on defining a TypeScript `Teacher` interface with required, op
   location: "London",
   contract: false
 }
+```
+
+---
+
+## Task 2 - Extending the Teacher Interface
+
+Extended the Teacher interface by creating a new interface named Directors. The Directors interface inherits all properties from Teacher and includes an additional required property:
+
+- `numberOfReports` (number): the number of people the director oversees.
+
+---
+
+### Example Output
+
+```ts
+{
+  firstName: "John",
+  lastName: "Doe",
+  location: "London",
+  fullTimeEmployee: true,
+  numberOfReports: 17
+}
+```
+
+---
+
+## Task - Printing Teachers
+
+This task required creating a function `printTeacher` that formats a teacher's name by returning:
+
+- The first letter of the `firstName`
+- Followed by a period and space
+- Then the full `lastName`
+
+Also defined a function interface `printTeacherFunction` to enforce the correct signature.
+
+---
+
+### Example Output
+
+```ts
+printTeacher("John", "Doe"); // Output: J. Doe
 ```
 
 ---
