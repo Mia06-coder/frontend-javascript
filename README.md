@@ -175,7 +175,7 @@ console.log(executeWork(createEmployee(1000))); // Getting to director tasks
 
 ---
 
-## ✅ 7 - String Literal Types
+## ✅ Task 7 - String Literal Types
 
 - Created a custom string literal type `Subjects` that restricts values to 'Math' or 'History'.
 - Implemented the `teachClass` function which returns the appropriate teaching message based on the subject.
@@ -188,6 +188,29 @@ console.log(executeWork(createEmployee(1000))); // Getting to director tasks
 ```ts
 console.log(teachClass("Math")); // Teaching Math
 console.log(teachClass("History")); // Teaching History
+```
+
+---
+
+### ✅ Task 8 - Ambient Namespaces
+
+- Defined `RowID` as a number type and `RowElement` interface with `firstName`, `lastName`, and optional `age`.
+- Declared types for third-party `crud.js` functions using an ambient namespace in `crud.d.ts`.
+- Used the types in `main.ts` to create, update, and delete a row object via CRUD operations.
+
+---
+
+### Example Output
+
+```ts
+const row: RowElement = { firstName: "Guillaume", lastName: "Salva" };
+
+const newRowID: RowID = CRUD.insertRow(row); // Insert row { firstName: 'Guillaume', lastName: 'Salva' }
+
+const updatedRow: RowElement = { ...row, age: 23 }; // Update row 951 { firstName: 'Guillaume', lastName: 'Salva', age: 23 }
+
+CRUD.updateRow(newRowID, updatedRow);
+CRUD.deleteRow(newRowID); // Delete row id 951
 ```
 
 ---
