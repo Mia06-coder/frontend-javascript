@@ -138,6 +138,24 @@ console.log(student.workOnHomework()); // "Currently working"
 
 ---
 
+## Task 5 - Advanced Types Part 1
+
+- Defined two interfaces: `DirectorInterface` and `TeacherInterface`, each with specific task-related methods.
+- Created classes `Director` and `Teacher` that implement their respective interfaces.
+- Implemented `createEmployee()` to instantiate either a Director or a Teacher based on the salary.
+
+---
+
+### Example Output
+
+```ts
+console.log(createEmployee(200)); // Teacher
+console.log(createEmployee(1000)); // Director
+console.log(createEmployee("$500")); // Director
+```
+
+---
+
 ## 🛠️ Usage
 
 ### Install dependencies:
