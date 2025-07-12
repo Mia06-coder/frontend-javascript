@@ -100,7 +100,7 @@ Extended the Teacher interface by creating a new interface named Directors. The 
 
 ---
 
-## Task - Printing Teachers
+## Task 3 - Printing Teachers
 
 This task required creating a function `printTeacher` that formats a teacher's name by returning:
 
@@ -120,6 +120,24 @@ printTeacher("John", "Doe"); // Output: J. Doe
 
 ---
 
+## Task 4 - Writing a Class
+
+- Created a `StudentClass` class that implements `StudentClassInterface`.
+- Constructor and methods were strictly typed.
+- Implemented `workOnHomework()` and `displayName()` methods.
+
+---
+
+### Example Output
+
+```ts
+const student = new StudentClass("Jane", "Doe");
+console.log(student.displayName()); // "Jane"
+console.log(student.workOnHomework()); // "Currently working"
+```
+
+---
+
 ## 🛠️ Usage
 
 ### Install dependencies:
@@ -132,6 +150,10 @@ npm install
 
 ```bash
 npx webpack
+```
+
+```bash
+npm run build
 ```
 
 ### Run locally:
