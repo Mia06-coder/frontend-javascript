@@ -1,5 +1,5 @@
 // Define the Teacher interface
-interface Teacher {
+export interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
   fullTimeEmployee: boolean;
@@ -24,12 +24,12 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 };
 
 // Define the StudentClass interface and constructor interface
-interface StudentClassInteface {
+export interface StudentClassInteface {
   workOnHomework(): string;
   displayName(): string;
 }
 
-interface StudentConstructor {
+export interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInteface;
 }
 

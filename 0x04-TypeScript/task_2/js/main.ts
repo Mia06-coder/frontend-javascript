@@ -1,32 +1,46 @@
 // Create interfaces for director and teacher
 interface DirectorInterface {
-  workFromHome: string;
-  getCoffeeBreak: string;
-  workDirectorTasks: string;
+  workFromHome(): string;
+  getCoffeeBreak(): string;
+  workDirectorTasks(): string;
 }
 
 interface TeacherInterface {
-  workFromHome: string;
-  getCoffeeBreak: string;
-  workTeacherTasks: string;
+  workFromHome(): string;
+  getCoffeeBreak(): string;
+  workTeacherTasks(): string;
 }
 
 // Implement classes for Director and Teacher
-class Director implements DirectorInterface {
-  workFromHome: string = "Working from home";
-  getCoffeeBreak: string = "Getting a coffee break";
-  workDirectorTasks: string = "Getting to director tasks";
-}
+export const Director = class Director implements DirectorInterface {
+  workFromHome(): string {
+    return "Working from home";
+  }
+  getCoffeeBreak(): string {
+    return "Getting a coffee break";
+  }
+  workDirectorTasks(): string {
+    return "Getting to director tasks";
+  }
+};
 
-class Teacher implements TeacherInterface {
-  workFromHome: string = "Cannot work from home";
-  getCoffeeBreak: string = "Cannot have a break";
-  workTeacherTasks: string = "Getting to work";
-}
+export const Teacher = class Teacher implements TeacherInterface {
+  workFromHome(): string {
+    return "Cannot work from home";
+  }
+  getCoffeeBreak(): string {
+    return "Cannot have a break";
+  }
+  workTeacherTasks(): string {
+    return "Getting to work";
+  }
+};
 
 // Create a function to determine the type of employee based on salary
 // If salary is a number, return Director if salary >= 500, else return Teacher
-const createEmployee = (salary: number | string): Director | Teacher => {
+export function createEmployee(
+  salary: number | string
+): DirectorInterface | TeacherInterface {
   if (typeof salary === "number") {
     return salary < 500 ? new Teacher() : new Director();
   } else if (typeof salary === "string") {
@@ -35,34 +49,36 @@ const createEmployee = (salary: number | string): Director | Teacher => {
   } else {
     throw new Error("Invalid salary type");
   }
-};
+}
 
 // Type predicate to check if the employee is a Director
-export const isDirector = (
-  employee: Director | Teacher
-): employee is Director => {
-  return (employee as Director).workDirectorTasks !== undefined;
-};
+export function isDirector(
+  employee: DirectorInterface | TeacherInterface
+): employee is DirectorInterface {
+  return (employee as DirectorInterface).workDirectorTasks !== undefined;
+}
 
 // Excecute work based on employee type
-export const executeWork = (employee: Director | Teacher): string => {
+export function executeWork(
+  employee: DirectorInterface | TeacherInterface
+): string {
   if (isDirector(employee)) {
-    return employee.workDirectorTasks;
+    return employee.workDirectorTasks();
   } else {
-    return employee.workTeacherTasks;
+    return employee.workTeacherTasks();
   }
-};
+}
 
 // String literal type for subjects
-type Subjects = "Math" | "History";
+export type Subjects = "Math" | "History";
 
 // Function to teach a class based on the subject
-export const teachClass = (todayClass: Subjects): string => {
+export function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
   return "Teaching History";
-};
+}
 
 // Example usage
 console.log(createEmployee(200)); // Teacher
